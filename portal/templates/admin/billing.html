@@ -1,0 +1,18 @@
+{% extends 'shared/base.html' %}
+{% block content %}
+<h2>Billing Management</h2>
+<div class="grid">
+<div>
+<h3>Create Invoice</h3>
+<form method="post">{% csrf_token %}{{ invoice_form.as_p }}<button type="submit">Save Invoice</button></form>
+</div>
+<div>
+<h3>Record Payment</h3>
+<form method="post">{% csrf_token %}{{ payment_form.as_p }}<button type="submit">Save Payment</button></form>
+</div>
+</div>
+<h3>Invoices</h3>
+{% for invoice in invoices %}<p>{{ invoice.patient.user.username }} - {{ invoice.amount }} due {{ invoice.due_date }}</p>{% empty %}<p>No invoices</p>{% endfor %}
+<h3>Payments</h3>
+{% for payment in payments %}<p>{{ payment.invoice.patient.user.username }} - {{ payment.amount }} via {{ payment.method }}</p>{% empty %}<p>No payments</p>{% endfor %}
+{% endblock %}

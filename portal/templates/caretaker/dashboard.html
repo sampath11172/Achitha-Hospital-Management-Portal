@@ -1,0 +1,15 @@
+{% extends 'shared/base.html' %}
+{% block content %}
+<h2>Caretaker Dashboard</h2>
+<h3>Assigned Patients</h3>
+{% for patient in patients %}<p>{{ patient.user.username }}</p>{% empty %}<p>No assigned patients.</p>{% endfor %}
+<h3>Appointments</h3>
+{% for appointment in appointments %}<p>{{ appointment.patient.user.username }} - {{ appointment.scheduled_at }}</p>{% empty %}<p>No appointments.</p>{% endfor %}
+<h3>Prescriptions</h3>
+{% for prescription in prescriptions %}<p>{{ prescription.medical_record.patient.user.username }} - {{ prescription.medicines }}</p>{% empty %}<p>No prescriptions.</p>{% endfor %}
+<h3>Lab Reports</h3>
+{% for lab in labs %}<p>{{ lab.patient.user.username }} - {{ lab.test_name }} - {{ lab.status }}</p>{% empty %}<p>No lab reports.</p>{% endfor %}
+<h3>Invoices & Payments</h3>
+{% for invoice in invoices %}<p>{{ invoice.patient.user.username }} invoice {{ invoice.amount }}</p>{% empty %}<p>No invoices.</p>{% endfor %}
+{% for payment in payments %}<p>{{ payment.invoice.patient.user.username }} payment {{ payment.amount }}</p>{% empty %}<p>No payments.</p>{% endfor %}
+{% endblock %}
