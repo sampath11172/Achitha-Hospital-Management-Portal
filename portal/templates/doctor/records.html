@@ -1,0 +1,9 @@
+{% extends 'shared/base.html' %}
+{% block content %}
+<h2>Doctor Records</h2>
+<div class="grid">
+<div><h3>New Medical Record</h3><form method="post">{% csrf_token %}{{ record_form.as_p }}<button type="submit">Save</button></form></div>
+<div><h3>New Prescription</h3><form method="post">{% csrf_token %}{{ prescription_form.as_p }}<button type="submit">Save</button></form></div>
+<div><h3>Lab Request / Result</h3><form method="post">{% csrf_token %}{{ lab_form.as_p }}<button type="submit">Save</button></form></div>
+</div>
+{% endblock %}

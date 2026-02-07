@@ -1,0 +1,9 @@
+{% extends 'shared/base.html' %}
+{% block content %}
+<h2>Doctor Dashboard</h2>
+<p><a href="{% url 'doctor-records' %}">Manage Records</a></p>
+<h3>Appointments</h3>
+{% for appointment in appointments %}<p>{{ appointment.scheduled_at }} - {{ appointment.patient.user.username }} ({{ appointment.status }})</p>{% empty %}<p>No appointments.</p>{% endfor %}
+<h3>Medical Records</h3>
+{% for record in medical_records %}<p>{{ record.patient.user.username }}: {{ record.diagnosis_notes|truncatechars:120 }}</p>{% empty %}<p>No records.</p>{% endfor %}
+{% endblock %}

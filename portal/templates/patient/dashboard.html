@@ -1,0 +1,15 @@
+{% extends 'shared/base.html' %}
+{% block content %}
+<h2>Patient Dashboard</h2>
+<h3>Book Appointment</h3>
+<form method="post">{% csrf_token %}{{ appointment_form.as_p }}<button type="submit">Book</button></form>
+<h3>My Appointments</h3>
+{% for appointment in appointments %}<p>{{ appointment.scheduled_at }} with Dr. {{ appointment.doctor.user.username }} ({{ appointment.status }})</p>{% empty %}<p>No appointments.</p>{% endfor %}
+<h3>Prescriptions</h3>
+{% for prescription in prescriptions %}<p>{{ prescription.created_at }}: {{ prescription.medicines }}</p>{% empty %}<p>No prescriptions.</p>{% endfor %}
+<h3>Lab Reports</h3>
+{% for lab in labs %}<p>{{ lab.test_name }} - {{ lab.status }} - {{ lab.result_notes }}</p>{% empty %}<p>No lab reports.</p>{% endfor %}
+<h3>Billing</h3>
+<p>Total Paid: {{ total_paid }}</p>
+{% for invoice in invoices %}<p>Invoice {{ invoice.id }}: {{ invoice.amount }} due {{ invoice.due_date }}</p>{% empty %}<p>No invoices.</p>{% endfor %}
+{% endblock %}
