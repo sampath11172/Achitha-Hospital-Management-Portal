@@ -1,0 +1,7 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Nurse Interface</title><link rel="stylesheet" href="/static/style.css"></head>
+<body><header class="topbar"><h1>Nurse Interface</h1><a href="/logout">Logout</a></header><main class="container">
+<section class="card"><h2>Assigned Patients</h2><table><thead><tr><th>ID</th><th>Name</th><th>Diagnosis</th><th>Risk</th></tr></thead><tbody>{{patient_rows}}</tbody></table></section>
+<section class="card"><h2>Medication Schedule</h2><ul><li>08:00 - Insulin (P-2026-001)</li><li>10:00 - Inhaler (P-2026-002)</li><li>14:00 - Beta blocker (P-2026-003)</li></ul></section>
+<section class="card"><h2>Vital Sign Monitoring (ICU)</h2><p>Automated triage status: <strong>{{triage_level}}</strong></p><div class="workflow"><div>Pulse</div><div>SpO2</div><div>BP</div><div>Alert</div></div></section>
+<section class="card"><h2>Task Checklist</h2><label><input type="checkbox"> Bedside round complete</label><label><input type="checkbox"> Lab sample dispatched</label><label><input type="checkbox"> Emergency cart validated</label></section>
+</main></body></html>

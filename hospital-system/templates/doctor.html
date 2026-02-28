@@ -1,0 +1,7 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Doctor Dashboard</title><link rel="stylesheet" href="/static/style.css"></head>
+<body><header class="topbar"><h1>Doctor Dashboard</h1><a href="/logout">Logout</a></header><main class="container">
+<section class="card"><h2>Today's Appointments</h2><table><thead><tr><th>Patient</th><th>Doctor</th><th>Date</th><th>Status</th></tr></thead><tbody>{{appointment_rows}}</tbody></table></section>
+<section class="card"><h2>Medical History + AI Risk Alerts</h2><table><thead><tr><th>ID</th><th>Name</th><th>Diagnosis</th><th>Risk</th></tr></thead><tbody>{{patient_rows}}</tbody></table></section>
+<section class="card"><h2>Lab Results</h2><table><thead><tr><th>Patient</th><th>Test</th><th>Status</th><th>Result</th></tr></thead><tbody>{{lab_rows}}</tbody></table></section>
+<section class="card"><h2>Prescription Creation + Telemedicine Notes</h2><form class="grid-form"><label>E-Prescription<textarea rows="3">Rx: </textarea></label><label>Doctor Notes<textarea rows="3">Consult summary...</textarea></label><button type="button">Save Notes</button></form></section>
+</main></body></html>

@@ -1,0 +1,8 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Patient Portal</title><link rel="stylesheet" href="/static/style.css"></head>
+<body><header class="topbar"><h1>Patient Portal</h1><a href="/logout">Logout</a></header><main class="container">
+<section class="card"><h2>Appointment Booking</h2><form method="post" action="/book-appointment" class="grid-form"><label>Patient UID<input name="patient_uid" value="P-2026-001"></label><label>Doctor<input name="doctor" value="Dr. Sarah Smith"></label><label>Date & Time<input name="appointment_date" placeholder="2026-03-10 10:00"></label><label>Notes<input name="notes" placeholder="Video consultation"></label><button type="submit">Book Appointment</button></form></section>
+<section class="card"><h2>Calendar Scheduling Board (CSS)</h2><div class="calendar"><div class="slot pending">09:00 Pending</div><div class="slot approved">11:00 Approved</div><div class="slot cancelled">14:00 Cancelled</div></div></section>
+<section class="card"><h2>Medical Reports & Prescription History</h2><table><thead><tr><th>Patient</th><th>Test</th><th>Status</th><th>Result</th></tr></thead><tbody>{{lab_rows}}</tbody></table></section>
+<section class="card"><h2>Billing History + Reminder Automation</h2><p>{{reminders}}</p><p>Invoice export simulated by Python text-based PDF content.</p></section>
+<section class="card"><h2>Telemedicine Interface (Simulated)</h2><div class="video-frame">Doctor Video Feed</div><textarea rows="4" placeholder="Consultation notes"></textarea></section>
+</main></body></html>
