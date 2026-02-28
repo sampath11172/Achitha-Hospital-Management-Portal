@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SHMS | Smart Hospital Management System</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Smart Hospital Management System (SHMS)</h1>
+    <span class="badge">HIPAA Compliance Ready</span>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Secure Multi-Role Login</h2>
+      <p class="msg">{{message}}</p>
+      <form method="post" action="/login" class="grid-form">
+        <label>Username <input name="username" required /></label>
+        <label>Password <input type="password" name="password" required /></label>
+        <button type="submit">Login</button>
+      </form>
+      <p class="tiny">Demo accounts: admin/admin, drsmith/doctor, nurseamy/nurse, johnp/patient</p>
+    </section>
+
+    <section class="card">
+      <h2>Feature Overview</h2>
+      <div class="feature-grid">
+        <div>Patient EHR/EMR</div><div>Appointments</div><div>Staff & Shifts</div><div>Bed/Ward View</div>
+        <div>Pharmacy Inventory</div><div>Lab Diagnostics</div><div>Billing & Insurance</div><div>Telemedicine</div>
+        <div>Emergency ICU</div><div>AI Risk Scoring</div><div>Triage Engine</div><div>Revenue Forecasting</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Structured Workflow Diagram</h2>
+      <div class="workflow">
+        <div>Registration</div><span>→</span><div>Triage AI</div><span>→</span><div>Doctor Consult</div><span>→</span><div>Labs + Pharmacy</div><span>→</span><div>Billing + Discharge</div>
+      </div>
+      <div class="workflow">
+        <div>Telemedicine Booking</div><span>→</span><div>Virtual Session</div><span>→</span><div>E-Prescription</div><span>→</span><div>Follow-up Reminder</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Technical System Architecture</h2>
+      <div class="architecture">
+        <div>Frontend Layer<br/>HTML + CSS</div>
+        <div>API Layer<br/>Python Routing</div>
+        <div>Backend Layer<br/>Core Python Modules</div>
+        <div>AI Processing Engine<br/>Rule-based Intelligence</div>
+        <div>Database Layer<br/>SQLite Storage</div>
+        <div>Auth + RBAC + Encryption<br/>HMAC Session + SHA-256</div>
+        <div>IoT Simulation Layer<br/>Vitals + ICU Alerts</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Project Source Structure</h2>
+<pre>
+/hospital-system
+├── /templates (index/admin/doctor/nurse/patient)
+├── /static/style.css
+├── database.py
+├── ai_engine.py
+├── auth.py
+├── utils.py
+└── server.py
+</pre>
+    </section>
+  </main>
+</body>
+</html>

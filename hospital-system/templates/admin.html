@@ -1,0 +1,21 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Admin Dashboard</title><link rel="stylesheet" href="/static/style.css"></head>
+<body><header class="topbar"><h1>Admin Dashboard</h1><a href="/logout">Logout</a></header>
+<main class="container">
+<section class="stats">
+<div class="stat"><h3>Total Patients</h3><p>{{total_patients}}</p></div>
+<div class="stat"><h3>Bed Occupancy</h3><p>{{bed_occupancy}}%</p></div>
+<div class="stat"><h3>Monthly Revenue</h3><p>${{monthly_revenue}}</p></div>
+<div class="stat"><h3>Emergency Alerts</h3><p>{{emergency_alerts}}</p></div>
+<div class="stat"><h3>Staff Count</h3><p>{{staff_count}}</p></div>
+</section>
+<section class="card"><h2>Graphical Analytics (CSS)</h2><div class="bars"><div style="height:72%">Risk</div><div style="height:56%">Admissions</div><div style="height:81%">Revenue</div><div style="height:39%">Discharge</div></div></section>
+<section class="card"><h2>Patient Registration (EHR)</h2>
+<form method="post" action="/register-patient" class="grid-form">
+<label>Name<input name="full_name" required></label><label>Age<input type="number" name="age" required></label><label>Gender<input name="gender"></label>
+<label>Diagnosis<input name="diagnosis"></label><label>History<input name="history"></label><label>Prescriptions<input name="prescriptions"></label>
+<label>Insurance<input name="insurance_status"></label><button type="submit">Register Patient</button></form></section>
+<section class="card"><h2>Patient Database</h2><table><thead><tr><th>ID</th><th>Name</th><th>Diagnosis</th><th>Risk</th></tr></thead><tbody>{{patient_rows}}</tbody></table></section>
+<section class="card"><h2>Appointments</h2><table><thead><tr><th>Patient</th><th>Doctor</th><th>Date</th><th>Status</th></tr></thead><tbody>{{appointment_rows}}</tbody></table></section>
+<section class="card"><h2>Pharmacy & Inventory</h2><p>{{inventory_alerts}}</p><table><thead><tr><th>Medicine</th><th>Qty</th><th>Expiry</th><th>Threshold</th></tr></thead><tbody>{{inventory_rows}}</tbody></table></section>
+<section class="card"><h2>Emergency & ICU Monitoring</h2><p>Triage Level: <strong>{{triage_level}}</strong></p><table><thead><tr><th>Patient</th><th>Case</th><th>Severity</th><th>Priority</th></tr></thead><tbody>{{emergency_rows}}</tbody></table></section>
+</main></body></html>
